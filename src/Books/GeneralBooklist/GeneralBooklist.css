@@ -1,0 +1,9 @@
+.bookList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+h2 {
+    margin-left: 42px;
+}

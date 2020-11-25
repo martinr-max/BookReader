@@ -1,0 +1,33 @@
+.MuiAppBar-colorPrimary {
+    background-color: lightyellow;
+    color: black;
+    font-weight: bold;
+}
+
+a {
+  color: black;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+
+  @media screen and (min-width: 334px) and (max-width: 1024px) {
+    .navLinks  {
+      display: none;
+
+    }
+    .searchInput {
+        display: none;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .MuiIconButton-label{
+      display: none;
+    }
+
+  }
+    
+  

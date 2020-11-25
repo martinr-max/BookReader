@@ -1,0 +1,22 @@
+.userBookList  {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.booklist_title {
+    margin-left: 53px;
+}
+
+.userBookList li {
+    list-style: none;
+}
+
+
+
+.listIsEmpty {
+    text-align: center;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,49 @@
+table {
+	font-size: 14px;
+	border-collapse: collapse;
+	width: 90%;
+	margin-right: 10rem;
+}
+
+.actions {
+	max-width: 3px;
+}
+
+table td,
+table th {
+	max-width: 2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+	word-break: break-all;
+	white-space: nowrap;
+	border: 1px solid #C8C8C8;
+	padding: 10px;
+}
+
+table tr:nth-child(even) {
+	background-color: #E8E8E8;
+}
+
+table tr:hover {
+	background-color: darkgray;
+	overflow: visible;
+	white-space: normal;
+	height: auto;
+}
+
+table .t1 {
+	width: 10%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+tr>td:hover {
+	overflow: visible;
+	white-space: unset;
+}
+
+.pagination :hover {
+	white-space: nowrap;
+}

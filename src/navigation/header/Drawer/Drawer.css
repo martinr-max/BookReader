@@ -1,0 +1,11 @@
+.drawer_list a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+
+}
+
+.drawer_list li {
+    margin-bottom: 12px;
+}

@@ -1,0 +1,65 @@
+
+.cardList {
+    display: flex;
+
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+}
+
+.card-wrap {
+  display: flex;
+  padding: 10px;
+  min-width: 10rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    align-items: center;
+}
+
+
+img {
+    width: 100%;
+    margin-top: 12px;
+    
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cardImg {
+    max-width: 70%;
+}
+
+.card-title {
+    font-size: small;
+    font-weight: bold;
+
+}
+
+.card-author {
+    font-size: small;
+    color: gray;
+}
+
+.root {
+    min-width: 150px;
+    height: 17rem;
+}
+
+.userCardMedia {
+    height: 140px;
+    background-size: contain !important;
+}
