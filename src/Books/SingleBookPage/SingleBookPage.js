@@ -7,25 +7,25 @@ import './SingleBookPage.css';
     
 export default function SingleBookPage() {
 
-	const [loadedBook, setLoadedBook] = useState([]);
-	const bookId = useParams()
-		.bookId;
+  const [loadedBook, setLoadedBook] = useState([]);
+  const bookId = useParams()
+    .bookId;
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const responseData = await axios.get('http://localhost:8000/api/bookBlog/book/' + bookId);
-				const book = responseData.data;
-				setLoadedBook(book);
-			} catch (err) {
-				console.log(err.message)
-			}
-		}
-		fetchData();
-	}, [bookId, setLoadedBook]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responseData = await axios.get('http://localhost:8000/api/bookBlog/book/' + bookId);
+        const book = responseData.data;
+        setLoadedBook(book);
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    fetchData();
+  }, [bookId, setLoadedBook]);
 
-	return (
-		<React.Fragment>
+  return (
+    <React.Fragment>
 		{loadedBook &&
 		<div className="singleBook-bg">
 		    <Container className="singleBook-inside">
@@ -47,6 +47,6 @@ export default function SingleBookPage() {
 		<div className="singleBook-cover" style={{ backgroundImage: `url(${loadedBook.imageUrl})` }}></div>
 		</div>}
 		</React.Fragment>
-	);
+  );
 
 }
