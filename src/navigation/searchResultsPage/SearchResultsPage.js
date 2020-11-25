@@ -3,8 +3,6 @@ import './SearchResultsPage.css'
 import { Container} from '@material-ui/core';
 import BookCard from '../../shared/Card/Card';
 
-
-
 export default function SearchResultsPage(props) {
   
     const results = props.location.state.results;
