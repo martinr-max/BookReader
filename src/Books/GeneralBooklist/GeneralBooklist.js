@@ -10,8 +10,8 @@ export default React.memo(function GeneralBookList() {
 
 	const [loadedBook, setLoadedBook] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState("");
-    
+	const [error, setError] = useState("");
+
 	useEffect(() => {
 		setIsLoading(true);
 		const fetchData = async () => {
@@ -25,10 +25,10 @@ export default React.memo(function GeneralBookList() {
 			}
 		}
 		fetchData();
-    }, []);
-    
+	}, []);
+
 	return (
-		<React.Fragment>
+	  <React.Fragment>
 	    {isLoading && !error &&
 	    <CircularIndeterminate size="7rem" color="primary" />}
 	        <Container className="all_books_container">
@@ -36,16 +36,17 @@ export default React.memo(function GeneralBookList() {
 		        <ul className="bookList">
 			    {loadedBook && loadedBook.map(book => {
 			    return <BookCard
-                key={book.id}
-                id={book.id}
-                title={book.title}
-                author={book.author}
-                pages={book.pages}
-                description={book.description}
-                imageUrl={book.imageUrl}
-                year={book.year} /> })}
-		    </ul>
+                		key={book.id}
+                		id={book.id}
+                		title={book.title}
+                		author={book.author}
+                		pages={book.pages}
+                		description={book.description}
+                		imageUrl={book.imageUrl}
+                		year={book.year} />
+				})}
+		       	</ul>
 	        </Container>
-        </React.Fragment>
+           </React.Fragment>
 	);
 })
