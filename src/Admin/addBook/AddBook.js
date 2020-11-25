@@ -22,7 +22,6 @@ export default function AddBook() {
     const [error, setError] = useState("");
     const [isLoading, setIsloading] = useState(false);
 
-
     const history = useHistory();
 
     const handleChange = (event) => {
@@ -50,9 +49,7 @@ export default function AddBook() {
         }
         catch(err) {
           setError(err.response.data.message);
-
         }
-    
     }; 
  
     return(
