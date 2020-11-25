@@ -8,27 +8,27 @@ import { Container } from '@material-ui/core';
 
 export default React.memo(function GeneralBookList() {
 
-	const [loadedBook, setLoadedBook] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState("");
+      const [loadedBook, setLoadedBook] = useState([]);
+      const [isLoading, setIsLoading] = useState(false);
+      const [error, setError] = useState("");
 
-	useEffect(() => {
-		setIsLoading(true);
-		const fetchData = async () => {
-			try {
-				const responseData = await axios.get('http://localhost:8000/api/bookBlog/books/');
-				const books = responseData.data;
-				setLoadedBook(books);
-				setIsLoading(false);
-			} catch (err) {
-				setError(err.response.data.message);
-			}
-		}
-		fetchData();
-	}, []);
+      useEffect(() => {
+        setIsLoading(true);
+        const fetchData = async () => {
+          try {
+            const responseData = await axios.get('http://localhost:8000/api/bookBlog/books/');
+            const books = responseData.data;
+            setLoadedBook(books);
+            setIsLoading(false);
+          } catch (err) {
+            setError(err.response.data.message);
+          }
+        }
+        fetchData();
+      }, []);
 
-	return (
-	  <React.Fragment>
+      return (
+        <React.Fragment>
 	    {isLoading && !error &&
 	    <CircularIndeterminate size="7rem" color="primary" />}
 	        <Container className="all_books_container">
@@ -48,5 +48,5 @@ export default React.memo(function GeneralBookList() {
 		       	</ul>
 	        </Container>
            </React.Fragment>
-	);
+      );
 })
