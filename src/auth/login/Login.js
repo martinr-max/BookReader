@@ -13,33 +13,42 @@ import Alert from '@material-ui/lab/Alert';
 
 const LoginForm = () => {
 
-	const { register, handleSubmit } = useForm();
-	const [error, setError] = useState("");
-	const [isLoading, setIsloading] = useState(false);
-	const history = useHistory();
-	const auth = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit
+  } = useForm();
+	
+  const [error, setError] = useState("");
+  const [isLoading, setIsloading] = useState(false);
+  const history = useHistory();
+  const auth = useContext(AuthContext);
 
-	const onSubmit = async (data) => {
-		let user = data;
-		try {
-			setIsloading(true);
-			const responseData = await axios.post('http://localhost:8000/api/user/login', user);
-			if (responseData) {
-				const userId = responseData.data.id;
-				const role = responseData.data.roles;
-				const booklist = responseData.data.booklist;
-				auth.login(userId, role[0], booklist)
-				history.push({ pathname: '/' + userId + '/booklist', state: { message: "logged it" } });
-			}
+  const onSubmit = async (data) => {
+    let user = data;
+    try {
+      setIsloading(true);
+      const responseData = await axios.post('http://localhost:8000/api/user/login', user);
+      if (responseData) {
+        const userId = responseData.data.id;
+        const role = responseData.data.roles;
+        const booklist = responseData.data.booklist;
+        auth.login(userId, role[0], booklist)
+        history.push({
+          pathname: '/' + userId + '/booklist',
+          state: {
+            message: "logged it"
+          }
+        });
+      }
 
-		} catch (err) {
-			setError(err.response.data.message);
-		}
+    } catch (err) {
+      setError(err.response.data.message);
+    }
 
-	};
+  };
 
-	return (
-		<React.Fragment>
+  return (
+    <React.Fragment>
         { error &&  <Alert severity="error"> { error } </Alert> }
         {isLoading && !error && <CircularIndeterminate size="7rem" color="primary" />}
         <Container> 
@@ -72,7 +81,7 @@ const LoginForm = () => {
           </form>
         </Container>
         </React.Fragment>
-	);
+  );
 }
 
 export default withRouter(LoginForm);
