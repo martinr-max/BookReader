@@ -8,7 +8,8 @@ import './SingleBookPage.css';
 export default function SingleBookPage() {
 
 	const [loadedBook, setLoadedBook] = useState([]);
-	const bookId = useParams().bookId;
+	const bookId = useParams()
+		.bookId;
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -24,29 +25,28 @@ export default function SingleBookPage() {
 	}, [bookId, setLoadedBook]);
 
 	return (
-    <React.Fragment>
-    {loadedBook &&
-    <div className="singleBook-bg">
-      <Container className="singleBook-inside">
-        <Typography component="h2" variant="h6">
-          {loadedBook.title}
-        </Typography>
-        <Typography component="h2" variant="subtitle1">
-          by {loadedBook.author}
-        </Typography>
-        <Typography className="book_desc" component="h5" variant="subtitle2">
-          {loadedBook.description}
-        </Typography>
-        <footer>
-          <Typography component="h2" variant="subtitle2">
-            Pages: {loadedBook.pages}
-          </Typography>
-        </footer>
-      </Container>
-      <div className="singleBook-cover" style={{ backgroundImage: `url(${loadedBook.imageUrl})` }}></div>
-    </div>}
-    </React.Fragment>
-		
+		<React.Fragment>
+		{loadedBook &&
+		<div className="singleBook-bg">
+		    <Container className="singleBook-inside">
+			<Typography component="h2" variant="h6">
+				{loadedBook.title}
+			</Typography>
+			<Typography component="h2" variant="subtitle1">
+				by {loadedBook.author}
+			</Typography>
+			<Typography className="book_desc" component="h5" variant="subtitle2">
+				{loadedBook.description}
+			</Typography>
+			<footer>
+				<Typography component="h2" variant="subtitle2">
+					Pages: {loadedBook.pages}
+				</Typography>
+			</footer>
+		    </Container>
+		<div className="singleBook-cover" style={{ backgroundImage: `url(${loadedBook.imageUrl})` }}></div>
+		</div>}
+		</React.Fragment>
 	);
 
 }
