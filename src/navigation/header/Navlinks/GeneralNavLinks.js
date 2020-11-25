@@ -7,9 +7,8 @@ import { Button } from '@material-ui/core';
 export default function GeneralNavLinks() {
 
    const {isLoggedIn, role, userId, logout} = useContext(AuthContext);
-  
-
-    return (
+ 
+   return (
         <React.Fragment>
              { role === 3 && isLoggedIn &&
              <NavLink to={"/admin/books"} >
