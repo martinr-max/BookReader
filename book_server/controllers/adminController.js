@@ -11,7 +11,10 @@ const adminlogin = async (req, res, next) => {
         email: req.body.email
       }
     });
-  } catch (err) {}
+  } catch (err) { res.status(500)
+      .json({
+        message: 'Internal error'
+      });}
   if (!user) {
     res.status(401)
       .json({
