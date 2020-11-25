@@ -11,30 +11,33 @@ import CircularIndeterminate from '../../shared/progressCircle/ProgressCircle';
 
 const SignupForm = () => {
 
-	const history = useHistory();
-	const [error, setError] = useState("");
-	const [isLoading, setIsloading] = useState(false);
-	const { register, handleSubmit } = useForm();
+  const history = useHistory();
+  const [error, setError] = useState("");
+  const [isLoading, setIsloading] = useState(false);
+  const {
+    register,
+    handleSubmit
+  } = useForm();
 
-	const onSubmit = async (data) => {
-		const newUser = {
-			name: data.name,
-			email: data.email,
-			password: data.password,
-			roles: ["user"]
-		}
-		try {
-			setIsloading(true);
-			await axios.post('http://localhost:8000/api/user/signup', newUser);
-			history.push(`/user/login`);
-		} catch (err) {
-			setError(err.responseData.data.message)
+  const onSubmit = async (data) => {
+    const newUser = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      roles: ["user"]
+    }
+    try {
+      setIsloading(true);
+      await axios.post('http://localhost:8000/api/user/signup', newUser);
+      history.push(`/user/login`);
+    } catch (err) {
+      setError(err.responseData.data.message)
 
-		}
-	}
+    }
+  }
 
-	return (
-		<React.Fragment>
+  return (
+    <React.Fragment>
              { error &&  <Alert severity="error"> { error } </Alert> }
              {isLoading && !error && <CircularIndeterminate size="7rem" color="primary" />}
             <div>
@@ -75,7 +78,7 @@ const SignupForm = () => {
                 </Container>
             </div>
         </React.Fragment>
-	);
+  );
 }
 
 export default withRouter(SignupForm);
