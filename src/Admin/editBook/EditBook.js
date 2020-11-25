@@ -22,17 +22,14 @@ export default function EditBook() {
                 const book = responseData.data;
                 setLoadedBook(book); 
                 setIsloading(false);  
-
             }
             catch(err) {
                 setError(err.response.data.message);
-
             }
-
         }
         fetchBook();
                 
-    }, [bookId])
+    }, [bookId]);
 
     const handleChange = (event) => {
             event.persist();
@@ -40,11 +37,10 @@ export default function EditBook() {
                 ...loadedBook,
                 [event.target.name]: event.target.value
             }));
-        }
+     };
 
     const submitEditedBook = async (event) => {
         event.preventDefault();
-
         const updatedBook = {
             title: loadedBook.title,
             author: loadedBook.author,
@@ -64,9 +60,8 @@ export default function EditBook() {
           }
           catch(err) {
               setError(err.response.data.message)
-
           }
-    }
+    };
 
     return(
         <React.Fragment>
@@ -136,5 +131,5 @@ export default function EditBook() {
         </Button> 
     </form>
     </React.Fragment>
-    )
+    );
 }
