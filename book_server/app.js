@@ -23,7 +23,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use('/api/bookBlog', bookBlogRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/user', userRoutes);
@@ -33,8 +32,6 @@ Book.belongsToMany(User, { as: 'Users', through: 'booklist', foreignKey: 'bookId
 
 User.belongsToMany(Role, { as: 'Roles', through: 'userRole', foreignKey: 'userId', otherKey: 'roleId'});
 Role.belongsToMany(User, {as: 'Users', through: 'userRole', foreignKey: 'roleId', otherKey: 'userId' });
-
-
 
 sequalize.sync()
 .then(result => {
