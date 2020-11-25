@@ -56,10 +56,9 @@ export default function MyRoutes() {
                 <Route path="/user/signup" component={Signup} /> 
                 <Route path="/user/login" component={Login} />
                 <Route path ="/admin/adminlogin" component={AdminLogin} />
-
              </Switch>
         )};
-
+    
        return(
         <Router>
             <AppHeader />
