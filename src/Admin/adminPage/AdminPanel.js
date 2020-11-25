@@ -73,14 +73,11 @@ export default function AdminPanel() {
         try {
           await axios.delete("http://localhost:8000/api/admin/books/delete/" + bookIndex);
           setLoadedBooks(prevBooks => prevBooks.filter(book => book.bookId !== bookIndex));
-
         }
         catch(err) {
           setError(err.response.data.message)
-        }
-      
-      }
-
+        }    
+      };
 
     return (
         <React.Fragment>
@@ -101,7 +98,6 @@ export default function AdminPanel() {
               handleClose={handleClose}
               bookid={bookIndex} />
         </React.Fragment>
-      );
-    
+      );  
 }
 
