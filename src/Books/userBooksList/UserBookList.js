@@ -73,29 +73,27 @@ export default function UserBookList(props) {
 
 	return (
 		<React.Fragment>
-        { error &&  <Alert severity="error"> { error } </Alert> }
-        {isLoading && !error && <CircularIndeterminate color="primary" size="7rem" />}
-        <Container>
-        <h3 className="booklist_title">Your Booklist</h3>
-        
-        <ul className="userBookList">
-        { loadedBook.length !== 0 ?    
-              loadedBook && loadedBook.map(book => {
-                return <UserBooklistItem
-                    key = {book.id}
-                    id = {book.id}
-                    title={book.title}
-                    author={book.author}
-                    imageUrl= {book.imageUrl}
-                    open={open}
-                    handleclickOpen={handleclickOpen}
-                    handleClose={handleClose}
-                    bookIndex={bookIndex}
-                    handleDeleteUserBook= {handleDeleteUserBook}
-             />})
-        :  <p className="listIsEmpty"> Your list is empty. Maybe add some book?</p>}
-        </ul>
-        </Container>
-        </React.Fragment>
-	)
+        	{ error &&  <Alert severity="error"> { error } </Alert> }
+        	{isLoading && !error && <CircularIndeterminate color="primary" size="7rem" />}
+        	<Container>
+       		  <h3 className="booklist_title">Your Booklist</h3>
+       		    <ul className="userBookList">
+        		{ loadedBook.length !== 0 ?    
+              		loadedBook && loadedBook.map(book => {
+                	return <UserBooklistItem
+                    	key = {book.id}
+                    	id = {book.id}
+                    	title={book.title}
+                    	author={book.author}
+                    	imageUrl= {book.imageUrl}
+                    	open={open}
+                    	handleclickOpen={handleclickOpen}
+                    	handleClose={handleClose}
+                    	bookIndex={bookIndex}
+                    	handleDeleteUserBook={handleDeleteUserBook}
+            	     />})   :  <p className="listIsEmpty"> Your list is empty. Maybe add some book?</p>}
+        	    </ul>
+        	</Container>
+        	</React.Fragment>
+	);
 }
