@@ -54,7 +54,7 @@ export default function UserBookList(props) {
 				body: JSON.stringify({ id: id })
 			})
 			.then(response => {
-				return response.json()
+				return response.json();
 
 			})
 			.then((deletedBook) => {
@@ -65,10 +65,10 @@ export default function UserBookList(props) {
 					if (newBookList[i] === deletedBookId) { newBookList.splice(i, 1); }
 				}
 				let newArray = loadedBook.filter(book => book.id !== deletedBookId);
-				setLoadedBook(newArray)
-				localStorage.setItem('userData', JSON.stringify(userData))
+				setLoadedBook(newArray);
+				localStorage.setItem('userData', JSON.stringify(userData));
 			})
-			.catch(err => console.log(err))
+			.catch(err => console.log(err));
 	}
 
 	return (
