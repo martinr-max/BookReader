@@ -28,7 +28,6 @@ export default function AdminLogin() {
       setIsloading(true);
       const responseData = await axios.post('http://localhost:8000/api/admin/login', user);
       const userId = responseData.data.id;
-      //const token = responseData.data.accessToken;
       const role = responseData.data.roles;
       auth.login(userId, role[0].id);
       history.push('/admin/adminpanel');
