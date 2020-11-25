@@ -67,7 +67,7 @@ export default function SearchInput({onKeyPress}) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-    )
+    );
 
    
 
