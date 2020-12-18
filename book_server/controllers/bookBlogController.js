@@ -131,12 +131,10 @@ const getBooklist = async (req, res, next) => {
       .json({
         message: 'Did not find any books'
       });
-
   }
 
   return res.status(200)
     .json(bookList);
-
 };
 
 const addBookToList = async (req, res, next) => {
