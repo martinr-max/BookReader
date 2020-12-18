@@ -34,7 +34,6 @@ export const AuthProvider = ({
     if (storedData) {
       login(storedData.userId, storedData.role, storedData.userBookList);
     }
-
   }, [login]);
 
   return (
