@@ -42,7 +42,7 @@ export default function AdminPanel() {
         try {
           const responseData = await axios.get('http://localhost:8000/api/bookBlog/books/');
           const books = responseData.data;
-          const bookArray = []
+          const bookArray = [];
           for(const key in books) {
             bookArray.push({
               id: key,
