@@ -16,7 +16,7 @@ export default function UserBooklistItem({
      handleDeleteUserBook
     }) {    
 
-    return(
+return(
       <div className="container">
   	<div className="card-wrap">
     	 <Card className="root">
@@ -42,8 +42,8 @@ export default function UserBooklistItem({
 	handleclickOpen={handleclickOpen}
 	handleDeleteUserBook={handleDeleteUserBook}
 	bookid={bookIndex} />
-  </div>
-</div>
-    );
+    </div>
+   </div>
+ );
 
 }
