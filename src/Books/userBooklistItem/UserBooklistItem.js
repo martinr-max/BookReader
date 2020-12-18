@@ -17,7 +17,7 @@ export default function UserBooklistItem({
     }) {    
 
 return(
-      <div className="container">
+    <div className="container">
   	<div className="card-wrap">
     	 <Card className="root">
       	  <CardActionArea>
@@ -27,15 +27,15 @@ return(
              <h4 className="card-author"> {author} </h4>
              <CardActionArea>
              <CardActions>
-              <Button className="removeBookButton" onClick={(e)=> handleclickOpen(id)}
+               <Button className="removeBookButton" onClick={(e)=> handleclickOpen(id)}
                 color="primary">
                 remove book
-              </Button>
-            </CardActions>
-          </CardActionArea>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+               </Button>
+               </CardActions>
+              </CardActionArea>
+             </CardContent>
+           </CardActionArea>
+         </Card>
     <DeleteUSerBookDialog
 	open={open}
 	handleClose={handleClose}
